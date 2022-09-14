@@ -10,7 +10,7 @@ function test_build:build(argv)
 
     -- generic?
     os.exec("xmake f -c -D -y")
-    os.exec("xmake -vD")
+    os.exec("xmake")
     os.exec("xmake p -D")
     if not is_host("windows") then
         os.exec("xmake install -o $(tmpdir) -a -D")
@@ -19,7 +19,7 @@ function test_build:build(argv)
     os.exec("xmake c -D")
     os.exec("xmake f --mode=debug -D -y")
     os.exec("xmake m -b")
-    os.exec("xmake -rv -a -D")
+    os.exec("xmake -r -a -D")
     os.exec("xmake m -e buildtest")
     os.exec("xmake m -l")
     os.exec("xmake m buildtest")
